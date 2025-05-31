@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resumelytics - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/assets/growth.png" alt="Logo" />
+      <span> Resumelytics</span>
+    </div>
+    <nav>
+      <a href="login.html" class="login">Log in</a>
+      <a href="signup.html" class="signup">Sign up</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      <h1 aria-live="polite">Analyze Your Resume</h1>
+      <article class="features-container">
+        <p>Get detailed insights and suggestions to improve your resume</p>
+      <label for="resumeUpload" class="upload-btn">
+  <img src="/assets/cloud-computing.png" alt="Upload" class="upload-icon" />
+  Upload Resume
+</label>
+
+        <input type="file" id="resumeUpload" accept=".pdf" hidden />
+        <p class="error" id="errorMessage"></p>
+
+        <div class="features-intro">Our key features:</div>
+        <div class="features-list">
+          <div class="feature-item" id="singleFeatureItem"></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="illustration">
+      <img src="/assets/photo_2025-05-31_14-51-15.jpg" alt="Illustration" />
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

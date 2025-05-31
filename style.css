@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrollbar */
+  height: 100vh;
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #e3f2fd, #bbdefb, #90caf9, #64b5f6);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #1a1a1a;
+  line-height: 1.6;
+  min-height: 100vh;
+   display: flex;
+  flex-direction: column;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 24px;
+  margin-right: 8px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: #333;
+  transition: background 0.3s ease;
+}
+
+nav a.signup {
+  background-color: #f9f9f9;
+}
+nav a.login {
+  background-color: #f9f9f9;
+}
+
+nav a:hover {
+  background-color: #969494;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  overflow: hidden;
+}
+
+
+.content {
+  max-width: 50%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.upload-btn {
+  background: linear-gradient(to right, #4f8ef7, #3a7bd5);
+  color: #fff;
+  padding: 14px 26px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(79, 142, 247, 0.3);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.upload-btn:focus {
+  outline: 2px solid #3a7bd5;
+  outline-offset: 2px;
+}
+
+.upload-btn:hover {
+  background: linear-gradient(to right, #3a7bd5, #4f8ef7);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 142, 247, 0.4);
+}
+.upload-btn .upload-icon {
+  height: 28px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+#resumeUpload {
+  display: none;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.illustration img {
+  max-width: 40vw;
+  height: auto;
+}
+
+
+.features-intro {
+  margin: 25px 0 15px;
+  font-weight: bold;
+  color: #4f8ef7;
+  font-size: 1.2rem;
+}
+
+.features-list {
+  margin: 20px 0;
+  height: 50px;
+  position: relative;
+}
+
+.feature-item {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  border-left: 3px solid #4f8ef7;
+  transition: opacity 0.5s ease-in-out;
+  min-height: 45px;
+}
+
+.feature-item::before {
+  content: "✓";
+  color: #4f8ef7;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.loader {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .content {
+    margin-bottom: 40px;
+  }
+
+  .content h1 {
+    font-size: 2.2rem;
+  }
+
+  .illustration img {
+    width: 100%;
+    max-width: 350px;
+  }
+ .content, .illustration img {
+    max-width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  header {
+    padding: 15px 20px;
+    flex-direction: column;
+  }
+
+  nav {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.8rem;
+  }
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
